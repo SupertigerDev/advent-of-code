@@ -1,4 +1,4 @@
-const total = `18814
+const input = `18814
 
 1927
 12782
@@ -2242,7 +2242,7 @@ const total = `18814
 7160
 6253`;
 
-const split = total.split('\n');
+const split = input.split('\n');
 let currentIndex = 0;
 let countArr = [];
 
