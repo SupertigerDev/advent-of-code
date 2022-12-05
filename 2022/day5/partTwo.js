@@ -510,13 +510,9 @@ move 10 from 3 to 9
 move 12 from 4 to 2
 move 1 from 8 to 1`;
 
-
-
 const lines = input.split("\n");
 
-
 const stacks = parseStacks();
-
 
 for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -527,12 +523,10 @@ for (let i = 0; i < lines.length; i++) {
     const fromStack = parseInt(splitMessage[3]);
     const toStack = parseInt(splitMessage[5]);
 
+    let stack = stacks[fromStack -1]
 
-    let cloneStack = [...stacks[fromStack -1]]
-
-
-    let newStack = cloneStack.filter((_, i) => i >= moveCount);
-    let itemsToMove = cloneStack.filter((_, i) => i < moveCount);
+    let newStack = stack.filter((_, i) => i >= moveCount);
+    let itemsToMove = stack.filter((_, i) => i < moveCount);
 
     stacks[fromStack -1] = newStack;
     stacks[toStack -1].unshift(...itemsToMove)
