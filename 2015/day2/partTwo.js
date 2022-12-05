@@ -1009,6 +1009,8 @@ let total = 0;
 for (let i = 0; i < dimensionList.length; i++) {
     const dimensions = dimensionList[i].split("x");
 
+    dimensions.sort((a, b) => (a - b));
+
     const length = parseInt(dimensions[0]);
     const width = parseInt(dimensions[1]);
     const height = parseInt(dimensions[2]);
